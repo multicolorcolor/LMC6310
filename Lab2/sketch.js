@@ -281,7 +281,7 @@ class Rain {
   display() {
     noStroke();
     fill(this.r, this.g, this.b);
-    rect(this.pos.x, this.pos.y, this.width, this.height);
+    brush.rect(this.pos.x, this.pos.y, this.width, this.height);
     
     
   }
