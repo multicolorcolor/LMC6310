@@ -17,6 +17,7 @@ let together;
 let Finished = false;
 let HandFinish1;
 let HandFinish2;
+let ImageArray = [];
 
 function preload() {
   backgroundPicture = loadImage("assets/background.jpg");
@@ -31,6 +32,10 @@ function preload() {
   together = loadImage("assets/together.png");
   HandFinish1 = loadImage("assets/handEnd1.png");
   HandFinish2 = loadImage("assets/handEnd2.png");
+  ImageArray[0] = loadImage("assets/arrayImg1.png");
+  ImageArray[1] = loadImage("assets/arrayImg2.png");
+  ImageArray[2] = loadImage("assets/arrayImg3.png");
+  ImageArray[3] = loadImage("assets/arrayImg4.png");
 }
 
 function setup(){
@@ -56,7 +61,11 @@ function draw(){
   HandFinish2.resize(width/2+width/10, 0);
   image(HandButton2, HandX2, height-height/3);
 
-  
+  for (let i = 0; i < ImageArray.length; i++) {
+    let x = (i + 1) * width / (ImageArray.length + 1) - 50;
+    let y = height / 2 - 50;
+    ImageArray[i].resize(width/8, 0);
+    image(ImageArray[i], x, y);}
 
 
   biirge.resize(0, height/2);
