@@ -103,6 +103,7 @@ function draw() {
   ellipse(width/20, height/2+height/2.8, lettericon1.width, lettericon1.height);
   stroke(letterSelect5);
   ellipse(width/20, height/2+height/2.3, lettericon1.width, lettericon1.height);
+  noStroke();
   image(lettericon1, width/20, height/2+height/7);
   image(lettericon2, width/20, height/2+height/4.7);
   image(lettericon3, width/20, height/2+height/3.5);
@@ -133,6 +134,7 @@ function mouseDragged(){
 }
 
 function RandomRain(){
+  noStroke();
   for (let i = 0; i < rainy.length; i++) {
     rainy[i].display();
     rainy[i].move();
