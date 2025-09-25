@@ -61,6 +61,7 @@ function draw(){
   HandFinish2.resize(width/2+width/10, 0);
   image(HandButton2, HandX2, height-height/3);
 
+  //for images arrays I remembered about them in the end. And used Sathwik example to add 4 subtle pencil like images - https://editor.p5js.org/sathwik9/sketches/ZVB_IRDSE 
   for (let i = 0; i < ImageArray.length; i++) {
     let x = (i + 1) * width / (ImageArray.length + 1) - 50;
     let y = height / 2 - 50;
