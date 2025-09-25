@@ -5,6 +5,9 @@ let distance;
 let distance2;
 let map;
 let keepFollowing = true;
+let snow = [{x: 100, y: 200, diameter: 5},
+  {x: 300, y: 400, diameter: 10}, 
+  {x: 500, y: 600, diameter: 15}];
 
 function preload(){
   map = new Sprite(400, 300, 5725, 3000, "none");
@@ -31,7 +34,7 @@ function preload(){
   text03.image = "assets/text03.png";
   text03.visible = false;
   
-  backgroundPicture = loadImage("assets/map01.png");
+  //backgroundPicture = loadImage("assets/map01.png");
 }
 
 
@@ -42,7 +45,7 @@ function setup(){
 
 function draw(){
   background("black");
-  map.visible = true;
+  //map.visible = true;
   //camera.off();
   //image(backgroundPicture, 0 ,0);
   player.scale = 0.5;
@@ -137,6 +140,13 @@ function draw(){
   }
 
   text("Click anywhere to start", -windowWidth, height/8);
+  //ellipse(mouseX, mouseY, 30, 50);
+
+  for (let i = 0; i < snow.length; i++){
+    fill("white");
+    noStroke();
+    ellipse(snow[i].x, snow[i].y, snow[i].diameter, snow[i].diameter);
+  }
 }
 
 function movement(){
@@ -183,6 +193,17 @@ function movement(){
     figure1.ani.playing = false;
     figure2.ani.playing = false;
   }
+}
+
+function mousePressed() {
+  // Create a new circle object and add it to the array
+  let newCircle = {
+    x: mouseX,
+    y: mouseY,
+    diameter: random(20, 50),
+  };
+  
+  snow.push(newCircle);
 }
 
 function overlay(player, trigger1){
